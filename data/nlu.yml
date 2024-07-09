@@ -1,0 +1,145 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - salut
+    - ca va
+    - salut ici
+    - bonjour
+    - bonsoir
+    - Allons-y
+    - salut bro
+    - bonjour ici
+    - bonsoir ici
+    - bon après midi
+- intent: goodbye
+  examples: |
+    - cu
+    - bye bye
+    - a plus
+    - bonne nuit
+    - bye
+    - au revoir
+    - bonne journée
+    - a bientot
+    - ciao
+    - on se voit après
+    - quit
+- intent: affirm
+  examples: |
+    - oui
+    - ok
+    - d'accord
+    - bien sur
+    - ca sonne bien
+    - correct
+- intent: deny
+  examples: |
+    - non
+    - n
+    - jamais
+    - je pense pas ca
+    - je n'aime pas ca
+    - pas moyen
+    - pas vraiement
+- intent: mood_great
+  examples: |
+    - parfait
+    - super
+    - incroyable
+    - je me sens comme un roi
+    - merveilleux
+    - je me sens très bien
+    - je suis super
+    - je suis incroyable
+    - je vais sauver le monde
+    - extrenement bien
+    - tellement tellement parfait
+    - tellement bien
+    - si parfait
+    - merci
+- intent: mood_unhappy
+  examples: |
+    - ma journée a été terible
+    - je suis triste
+    - je ne me sens pas bien
+    - je suis perdu
+    - super triste
+    - je suis tellement triste
+    - triste
+    - très triste
+    - malheureux
+    - pas bien
+    - pas très bien
+    - extrenement triste
+    - tellement triste
+- intent: bot_challenge
+  examples: |
+    - est tu un bot?
+    - est tu un humain?
+    - est ce que je parle avec un bot?
+    - est ce que je parle avec un humain?
+- intent: obtenir_informations_carriere
+  examples: |
+    - Dis-moi tout sur la carrière de [psychologue](carriere)
+    - Quelles sont les informations sur la carrière [Ingenieur en informatique](carriere) ?
+    - [psychologue](carriere) - dites-moi à son sujet
+    - Expliquez-moi la carrière de [medecin](carriere)
+    - je veux des information sur la carrière d'[avocat](carriere)
+- intent: explorer_options_etudes
+  examples: |
+    - Quelles sont les options d'études disponibles en [informatique](domaine_etude) ?
+    - les programmes académiques proposés en [droit](domaine_etude).
+    - Donne-moi des informations sur les cursus d'études en [droit](domaine_etude) .
+    - J'aimerais en savoir plus sur les options d'études en [medecine](domaine_etude).
+    - Quels sont les diplômes offerts dans le domaine de la [santé](domaine_etude) ?
+    - Explique les choix académiques pour une carrière en [psychologie](domaine_etude).
+    - Parle-moi des options d'études en [gestion d'entreprise](domaine_etude).
+    - Donne-moi des détails sur les programmes universitaires en [comptabilite](domaine_etude).
+    - Explore les cursus académiques pour les professions du [design](domaine_etude).
+    - Je veux faire des etudes dans le domaine de la [santé](domaine_etude).
+    - J'aimerai etudier le [droit](domaine_etude)
+    - J'envisage de faire des etudes en [informatique](domaine_etude)
+    - As-tu des informations sur les options d'etudes en [ressource humaine](domaine_etude)
+- intent: assistance_planification_etudes
+  examples: |
+    - J'ai besoin d'aide pour planifier mes études en master(niveau_etudes) [informatique](domaine_etudes).
+    - Donne-moi des conseils pour la planification de mes études en informatique(domaine_etudes).
+    - Peux-tu m'assister dans la planification de mes études en [comptabilite](domaine_etudes) pour la [licence](niveau_etudes) ?
+    - Aide-moi à organiser mes études pour un [master](niveau_etudes) en [droit](domaine_etudes).
+    - Quels sont les éléments clés à considérer pour planifier des études en [genie civil](domaine_etudes) au niveau [master](niveau_etudes) ?
+    - Comment puis-je planifier efficacement mes études en [agronomie](domaine_etudes) pour une [licence](niveau_etudes) ?
+    - Donne-moi des suggestions pour créer mon plan d'études en [medecine](domaine_etudes).
+    - Peux-tu me guider dans la planification de mes études en [gestion d'entreprise](domaine_etudes) en [licence](niveau_etudes) ?
+- intent: orientation_choix_academique
+  examples: |
+    - Quels sont les débouchés professionnels après un diplôme en [licence informatique](diplome) ?
+    - Je viens de terminer mes études en [médecine](diplome). Quelles sont les options de carrière disponibles ?
+    - Quels emplois sont accessibles après un [master génie civil](diplome)?
+    - Quels emplois que je peux faire après un [master informatique](diplome)?
+    - J'ai une [licence electronique](diplome) quels sont mes possibilités d'emploi?
+    - Je veux trouver un travail avec mon [master droit](diplome).
+    - Je cherche un quel emploi je peux faire avec ma [licence economie](diplome).
+    - Après avoir obtenu un diplôme en [licence droit](diplome), quelles sont les possibilités de carrière ?
+    - Je cherche des informations sur les opportunités professionnelles après un diplôme en [dut gestion d'entreprise](diplome).
+    - Quels sont les domaines d'emploi possibles après une formation en [licence marketing](diplome) ?
+    - Après avoir obtenu un diplôme en [master finance](diplome), quels sont les types d'emplois auxquels je peux m'attendre ?
+    - Quelles sont les perspectives professionnelles après avoir suivi une formation en [licence telecom](diplome) ?
+    - Après avoir obtenu un diplôme en [licence sciences politiques](diplome), quels sont les chemins de carrière possibles ?
+    - j'ai un [master informatique](diplome) quels sont mes possibilités d'emploi ?
+    - quels sont les emplois possibles après une [licence géographie](diplome)
+- intent: informations_etablissement
+  examples: |
+    - Quels sont les programmes offerts par L'[ENI](etablissement) ?
+    - Donne-moi des détails sur les cursus disponilbes à [Technolab](etablissement).
+    - Je cherche des informations sur l'université [ISPRIC](etablissement).
+    - Pourrais-tu me renseigner sur les cours proposés par la [FST](etablissement) ?
+    - J'aimerais en savoir plus sur les cursus offerts par [Technolab](etablissement).
+    - Quelles sont les modalités d'admission à la [Medecine](etablissement)?
+    - Donne-moi des détails sur les programmes d'études à [Technolab](etablissement).
+    - quels sont les programmes offertes à l'[ENI](etablissement)
+    - je veux savoir quels sont les cursus disponible à [technolab]{"entity": "etablissement", "value": "Technolab"}
+- intent: nlu_fallback
+  examples: |
+    - as-tu des informations sur les filières de l'[ISPRIC](etablissement)

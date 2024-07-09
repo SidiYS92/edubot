@@ -1,0 +1,109 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: test orientation intent
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: obtenir_informations_carriere
+  - action: action_obtenir_informations_carriere
+
+# Story Edu
+- story: Obtenir des Informations sur une Carrière
+  steps:
+  - intent: obtenir_informations_carriere
+    entities:
+    - carriere: "ingénieur en informatique"
+  - action: action_obtenir_informations_carriere
+  - slot_was_set:
+    - carriere: "ingénieur en informatique"
+
+
+- story: Obtenir des Informations sur une Carrière (Autre Carrière)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: obtenir_informations_carriere
+    entities:
+    - carriere: "psychologue"
+  - action: action_obtenir_informations_carriere
+  - slot_was_set:
+    - carriere: "psychologue"
+  - intent: obtenir_informations_carriere
+    entities:
+      - carriere: "expert comptable"
+  - action: action_obtenir_informations_carriere
+  - slot_was_set:
+      - carriere: "expert comptable"
+
+
+- story: Explorer les Options d'Études
+  steps:
+  - intent: explorer_options_etudes
+  - action: action_explorer_options_etudes
+
+
+- story: Explorer les Options d'Études et entite
+  steps:
+  - intent: explorer_options_etudes
+    entities:
+    - domaine_etude: "droit"
+  - action: action_explorer_options_etudes
+  - slot_was_set:
+    - domaine_etude: "droit"
+
+
+
+
+- story: interactive_story_1
+  steps:
+  - intent: informations_etablissement
+    entities:
+    - etablissement: ENI
+  - slot_was_set:
+    - etablissement: ENI
+  - action: action_etablissement
+  - intent: mood_great
+
+- story: interactive_story_1
+  steps:
+  - intent: informations_etablissement
+    entities:
+    - etablissement: Technolab
+  - slot_was_set:
+    - etablissement: Technolab
+  - action: action_etablissement
+  - intent: nlu_fallback
+    entities:
+    - etablissement: ISPRIC
+  - slot_was_set:
+    - etablissement: ISPRIC
+  - action: action_etablissement

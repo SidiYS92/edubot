@@ -1,0 +1,83 @@
+version: '3.1'
+intents:
+- affirm
+- assistance_planification_etudes
+- bot_challenge
+- deny
+- explorer_options_etudes
+- goodbye
+- greet
+- informations_etablissement
+- mood_great
+- mood_unhappy
+- nlu_fallback
+- obtenir_informations_carriere
+- orientation_choix_academique
+entities:
+- etablissement
+- diplome
+- carriere
+- domaine_etude
+- domaine_etudes
+- niveau_etudes
+slots:
+  carriere:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: carriere
+  domaine_etude:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: domaine_etude
+  domaine_etudes:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: domaine_etudes
+  niveau_etudes:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: niveau_etudes
+  diplome:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: diplome
+  etablissement:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: etablissement
+responses:
+  utter_greet:
+  - text: Salut , je suis EduBot, votre Conseiller d'orientatio virtuel ,Comment puis-je vous aider.
+  - text: Bonjour , je suis EduBot, votre Conseiller d'orientatio virtuel ,En-quoi puis-je vous aider.
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Est-ce que cette réponse vous a été utile?
+  utter_happy:
+  - text: Super, prenez soin de vous!
+  utter_goodbye:
+  - text: A plus !
+  utter_orient:
+  - text: Je vais vous donner les info sur la carriere
+  utter_iamabot:
+  - text: Je suis Edubot un chatBot , créer par Sidi Yaya I. Simaga.
+  utter_askhelp:
+  - text: Salut , je suis EduBot, votre Conseiller d'Orientatio virtuel ,Comment puis-je vous aider.
+  - text: Salut , je suis EduBot, votre Conseiller d'Orientatio virtuel ,En-quoi puis-je vous aider.
+actions:
+- action_etablissement
+- utter_goodbye
+- action_conseil_orientation_academique
+- utter_greet
+- action_obtenir_informations_carriere
+- action_explorer_options_etudes
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
